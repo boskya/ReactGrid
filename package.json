@@ -41,6 +41,7 @@
   "homepage": "https://github.com/boskya/ReactGrid",
   "dependencies": {
     "react": "^0.13.2",
-    "reflux": "^0.2.7"
+    "reflux": "^0.2.7",
+    "lodash": "^3.8.0"
   }
 }
