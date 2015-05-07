@@ -14,7 +14,7 @@ var Grid = React.createClass({
                 {
                   this.state.tasks.schema.map(function(taskField){
                     return (
-                      <th>{taskField}</th>
+                      <th>{taskField.DisplayName}</th>
                     );
                   })
                 }
@@ -26,7 +26,7 @@ var Grid = React.createClass({
                             {
                               tasksSchema.map(function(taskField){
                                 return (
-                                  <td className="col">{task[taskField]}</td>
+                                  <td className="col">{task[taskField.Name]}</td>
                                 );
                               })
                             }

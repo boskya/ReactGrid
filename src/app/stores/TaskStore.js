@@ -2,37 +2,130 @@ var Reflux = require('reflux');
 var React = require('react');
 
 var tasksSchema = [
-    "ActualFinish",
-    "ActualStart",
-    "ActualWorkMinutes",
-    "Assignments",
-    "CrossProjectPredecessors",
-    "Description",
-    "DurationMinutes",
-    "EtcMinutes",
-    "Id",
-    "Indent",
-    "IsBillable",
-    "IsDeliverable",
-    "IsMilestone",
-    "IsOnCriticalPath",
-    "IsParent",
-    "Number",
-    "OnHold",
-    "OutlineNumber",
-    "ParentTaskId",
-    "PercentComplete",
-    "PlannedFinish",
-    "PlannedStart",
-    "PlannedWorkMinutes",
-    "Priority",
-    "RelatedItems",
-    "SiblingIndex",
-    "Status",
-    "TaskPredecessorRefs",
-    "TaskType",
-    "Title",
-    "WorkCalendarID"
+    {
+        "Name": "ActualFinish",
+        "DisplayName": "Actual Finish"
+    },
+    {
+        "Name": "ActualStart",
+        "DisplayName": "Actual Start"
+    },
+    {
+        "Name": "ActualWorkMinutes",
+        "DisplayName": "Actual Work"
+    },
+    {
+        "Name": "Assignments",
+        "DisplayName": "Assignments"
+    },
+    {
+        "Name": "CrossProjectPredecessors",
+        "DisplayName": "Cross Project Predecessors"
+    },
+    {
+        "Name": "Description",
+        "DisplayName": "Description"
+    },
+    {
+        "Name": "DurationMinutes",
+        "DisplayName": "Duration"
+    },
+    {
+        "Name": "EtcMinutes",
+        "DisplayName": "Etc"
+    },
+    {
+        "Name": "Id",
+        "DisplayName": "Id"
+    },
+    {
+        "Name": "Indent",
+        "DisplayName": "Indent"
+    },
+    {
+        "Name": "IsBillable",
+        "DisplayName": "Billable"
+    },
+    {
+        "Name": "IsDeliverable",
+        "DisplayName": "Deliverable"
+    },
+    {
+        "Name": "IsMilestone",
+        "DisplayName": "Milestone"
+    },
+    {
+        "Name": "IsOnCriticalPath",
+        "DisplayName": "Critical Path"
+    },
+    {
+        "Name": "IsParent",
+        "DisplayName": "Parent"
+    },
+    {
+        "Name": "Number",
+        "DisplayName": "Number"
+    },
+    {
+        "Name": "OnHold",
+        "DisplayName": "OnHold"
+    },
+    {
+        "Name": "OutlineNumber",
+        "DisplayName": "WBS"
+    },
+    {
+        "Name": "ParentTaskId",
+        "DisplayName": "ParentTaskId"
+    },
+    {
+        "Name": "PercentComplete",
+        "DisplayName": "% Complete"
+    },
+    {
+        "Name": "PlannedFinish",
+        "DisplayName": "Planned Finish"
+    },
+    {
+        "Name": "PlannedStart",
+        "DisplayName": "Planned Start"
+    },
+    {
+        "Name": "PlannedWorkMinutes",
+        "DisplayName": "Planned Work"
+    },
+    {
+        "Name": "Priority",
+        "DisplayName": "Priority"
+    },
+    {
+        "Name": "RelatedItems",
+        "DisplayName": "Related Items"
+    },
+    {
+        "Name": "SiblingIndex",
+        "DisplayName": "Sibling Index"
+    },
+    {
+        "Name": "Status",
+        "DisplayName": "Status"
+    },
+    {
+        "Name": "TaskPredecessorRefs",
+        "DisplayName": "Predeessors"
+    },
+    {
+        "Name": "TaskType",
+        "DisplayName": "Type"
+    },
+    {
+        "Name": "Title",
+        "DisplayName": "Name"
+    },
+    {
+        "Name": "WorkCalendarID",
+        "DisplayName": "Work Calendar Id"
+    },
 ];
 
 
