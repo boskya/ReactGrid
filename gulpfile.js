@@ -42,7 +42,7 @@ gulp.task('bower', function() {
 /**
  * Less compilation
  */
-.task('less', function() {
+.task('less', ['clean'], function() {
   return gulp.src(package.paths.less)
   .pipe(less())
   .pipe(concat(package.dest.style))
