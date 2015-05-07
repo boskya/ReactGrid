@@ -5,15 +5,15 @@ var Row = React.createClass({
         var schema = this.props.schema;
         var task = this.props.task;
         return (
-            <tr className="row">
+            <div className="row">
             {
               schema.map(function(taskField){
                 return (
-                  <td className="col">{task[taskField.Name]}</td>
+                  <div className="col">{task[taskField.Name]}</div>
                 );
               })
             }
-            </tr>
+            </div>
         );
     }
 });

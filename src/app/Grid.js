@@ -18,22 +18,22 @@ var Grid = React.createClass({
             return _.find(tasksSchema, { 'Name': taskFieldSetting.Name })
         });
         return (
-            <table id="grid" className="gridContainer">
-                <tr className="headerRow">
+            <div id="grid" className="gridContainer">
+                <div className="headerRow">
                 {
                   displaySchema.map(function(taskField){
                     return (
-                      <th>{taskField.DisplayName}</th>
+                      <div className="col">{taskField.DisplayName}</div>
                     );
                   })
                 }
-                </tr>
+                </div>
                 {
                     this.state.tasks.tasks.map(function (task) {
                         return <Row schema={displaySchema} task={task}/>;
                     })
                 }
-            </table>
+            </div>
         );
     }
 });
