@@ -16,7 +16,6 @@ body{
   }
 
   .row, .rowHeader {
-    border: 1px solid #999;
     box-sizing: border-box;
     white-space: nowrap;
     display:table-row;
@@ -36,12 +35,13 @@ table {
   border-spacing:0;
 }
 
-td, th {
+.row div, .headerRow div {
   border: 1px solid #999;
   padding: 0.35rem;
   text-align: left;
   vertical-align: middle;
   white-space: nowrap;
+  min-width: 65px;
 }
 
 .row:nth-child(odd) {
