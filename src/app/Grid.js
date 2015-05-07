@@ -2,6 +2,7 @@
 var React = require('react');
 var Reflux = require('reflux');
 var TasksStore = require('./stores/TaskStore');
+var Row = require('./Row.js');
 
 var Grid = React.createClass({
     mixins: [Reflux.connect(TasksStore)],
@@ -9,7 +10,7 @@ var Grid = React.createClass({
         var tasks = this.state.tasks.tasks;
         var tasksSchema = this.state.tasks.schema;
         return (
-            <table className="gridContainer">
+            <table id="grid" className="gridContainer">
                 <tr className="headerRow">
                 {
                   this.state.tasks.schema.map(function(taskField){
@@ -21,17 +22,7 @@ var Grid = React.createClass({
                 </tr>
                 {
                     this.state.tasks.tasks.map(function (task) {
-                        return (
-                            <tr className="row">
-                            {
-                              tasksSchema.map(function(taskField){
-                                return (
-                                  <td className="col">{task[taskField.Name]}</td>
-                                );
-                              })
-                            }
-                            </tr>
-                        );
+                        return <Row schema={tasksSchema} task={task}/>;
                     })
                 }
             </table>
