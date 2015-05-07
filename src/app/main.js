@@ -1,4 +1,4 @@
 /** @jsx React.DOM */
 var React = require('react');
-var App = require('./App.js');
-React.render(<App/>, document.getElementById('container'));
+var Grid = require('./Grid.js');
+React.render(<Grid/>, document.getElementById('container'));
