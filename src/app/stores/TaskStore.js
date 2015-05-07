@@ -1,21 +1,19 @@
 var Reflux = require('reflux');
+var React = require('react');
+
+var tasks = [
+  {
+    "Title": "deskdocs",
+  },
+  {
+    "Title": "some other deskdocs",
+  },
+];
 
 var TasksStore = Reflux.createStore({
 
-  //model data
-  tasks: [],
-  listenables: [],
-
-  getInitalState: function() {
-      this.tasks = [
-        {
-          "Title": "deskdocs",
-        },
-        {
-          "Title": "some other deskdocs",
-        },
-      ]
-      return this.tasks;
+  getInitalState() {
+      return {tasks};
   }
 });
 

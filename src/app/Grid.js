@@ -4,15 +4,8 @@ var Reflux = require('reflux');
 var TasksStore = require('./stores/TaskStore');
 
 var Grid = React.createClass({
-  mixins: [
-    Reflux.connect(TasksStore, "tasksFromStore")
-  ],
-  getInitialState: function() {
-    return {
-      tasks: []
-    }
-  },
-	render: function() {
+  mixins: [Reflux.connect(TasksStore)],
+	render() {
 		return (
       <div className="gridContainer">
         <div className="rowHeader">
