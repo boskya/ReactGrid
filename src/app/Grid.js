@@ -2,6 +2,7 @@
 var React = require('react');
 var Reflux = require('reflux');
 var TasksStore = require('./stores/TaskStore');
+var ClientSettingsStore = require('./stores/ClientSettingsStore';)
 
 var Grid = React.createClass({
     mixins: [Reflux.connect(TasksStore)],
