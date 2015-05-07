@@ -6,27 +6,35 @@ var TasksStore = require('./stores/TaskStore');
 var Grid = React.createClass({
     mixins: [Reflux.connect(TasksStore)],
     render() {
+        var tasks = this.state.tasks.tasks;
+        var tasksSchema = this.state.tasks.schema;
         return (
-            <div className="gridContainer">
-                <div className="rowHeader">
-                    <div className="col">Column 1</div>
-                    <div className="col">Column 2</div>
-                    <div className="col">Column 3</div>
-                    <div className="col">Column 3</div>
-                </div>
+            <table className="gridContainer">
+                <tr className="headerRow">
                 {
-                    this.state.tasks.map(function (task) {
+                  this.state.tasks.schema.map(function(taskField){
+                    return (
+                      <th>{taskField}</th>
+                    );
+                  })
+                }
+                </tr>
+                {
+                    this.state.tasks.tasks.map(function (task) {
                         return (
-                            <div className="row">
-                                <div className="col">{task.Title}</div>
-                                <div className="col">Column 2</div>
-                                <div className="col">Column 3</div>
-                                <div className="col">Column 3</div>
-                            </div>
+                            <tr className="row">
+                            {
+                              tasksSchema.map(function(taskField){
+                                return (
+                                  <td className="col">{task[taskField]}</td>
+                                );
+                              })
+                            }
+                            </tr>
                         );
                     })
                 }
-            </div>
+            </table>
         );
     }
 });

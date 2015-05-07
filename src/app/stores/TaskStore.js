@@ -36,7 +36,9 @@ var tasksSchema = [
 ];
 
 
-var tasks = [
+var tasks = {
+   schema: tasksSchema,
+   tasks: [
     {
         "ActualFinish": null,
         "ActualStart": null,
@@ -520,7 +522,8 @@ var tasks = [
         "Title": "sdgfsdgf",
         "WorkCalendarID": null
     }
-];
+    ]
+};
 
 
 var TasksStore = Reflux.createStore({
