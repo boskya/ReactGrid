@@ -1,26 +1,32 @@
 body{
   margin:0 auto;
   padding:0;
+  overflow:scroll;
 }
 
 .gridContainer {
   margin:0 auto;
   border: 1px solid gray;
+  overflow: scroll;
+  display:table;
 
   .rowHeader {
     font-weight: bold;
+    background-color: #B3B3D7;
   }
 
   .row, .rowHeader {
     border: 1px solid #999;
     box-sizing: border-box;
-    display:inline-block;
+    white-space: nowrap;
+    display:table-row;
   }
 
   .col {
+    width:300px;
     border: 1px solid #999;
     box-sizing: border-box;
-    display:inline-block;
+    display:table-cell;
   }
 
 }
@@ -44,6 +50,7 @@ td, th {
 
 .headerRow {
   background-color: #B3B3D7;
+  white-space: nowrap;
 }
 
 .row:hover {

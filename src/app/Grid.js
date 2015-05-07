@@ -19,7 +19,7 @@ var Grid = React.createClass({
         });
         return (
             <div id="grid" className="gridContainer">
-                <div className="headerRow">
+                <div className="rowHeader">
                 {
                   displaySchema.map(function(taskField){
                     return (
