@@ -12,15 +12,18 @@ body{
   }
 
   .row, .rowHeader {
-    border: 1px solid #999;
     box-sizing: border-box;
     display:inline-block;
+    white-space: nowrap;
+    overflow:scroll;
+    min-width: 100%;
   }
 
   .col {
     border: 1px solid #999;
     box-sizing: border-box;
     display:inline-block;
+    width:125px;
   }
 
 }
@@ -30,12 +33,13 @@ table {
   border-spacing:0;
 }
 
-td, th {
+.row div, .headerRow div {
   border: 1px solid #999;
   padding: 0.35rem;
   text-align: left;
   vertical-align: middle;
   white-space: nowrap;
+  min-width: 65px;
 }
 
 .row:nth-child(odd) {
