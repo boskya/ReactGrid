@@ -6,13 +6,12 @@ var tasks = [
         "Title": "deskdocs"
     },
     {
-        "Title": "some other deskdocs"
+      "Title": "deskdocs 2"      
     }
-];
+    ];
 
 var TasksStore = Reflux.createStore({
-
-    getInitalState() {
+  getInitialState() {
         return {tasks};
     }
 });
