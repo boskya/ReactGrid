@@ -7,8 +7,15 @@ var Row = React.createClass({
             editing: false
         };
     },
-    toggleEdit() {
-        this.setState({ editing: !this.state.editing });
+    expandEdit() {
+        if (!this.state.editing) {
+            this.setState({ editing: true });
+        }
+    },
+    collapseEdit() {
+        if (this.state.editing) {
+            this.setState({ editing: false });
+        }
     },
     render() {
         var schema = this.props.schema;
@@ -16,9 +23,9 @@ var Row = React.createClass({
         var editing = this.state.editing;
 
         return (
-            <div className="row">
+            <div className="row" onClick={this.expandEdit}>
             {
-               editing ? (<Editor task={task} schema={schema}/>) : schema.map(function(taskField){
+               editing ? (<Editor task={task} schema={schema} doneCB={this.collapseEdit} />) : schema.map(function(taskField){
                 return (
                   <div className="col">{task[taskField.Name]}</div>
                 );

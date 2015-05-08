@@ -6,8 +6,9 @@ var Editor = React.createClass({
         var schema = this.props.schema;
         return (
             <div className="full-width task-editor">
-                <input type="text" value={task.Title} ></input>
-                Planned Start: <input type="date" value={task.PlannedStart} /> Planned Finish: <input type="date" value={task.PlannedFinish}/>
+                <div>Name: <input type="text" value={task.Title} ></input></div>
+                <div>Planned Start: <input type="date" value={task.PlannedStart} /></div>
+                <div>Planned Finish: <input type="date" value={task.PlannedFinish}/></div>
                 <button type="button" onClick={this.props.doneCB}>Done</button>
             </div>
         );
