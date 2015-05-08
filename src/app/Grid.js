@@ -10,6 +10,7 @@ var _ = require('lodash');
 var Grid = React.createClass({
     mixins: [Reflux.connect(TasksStore), Reflux.connect(ClientSettingsStore)],
     render() {
+        debugger;
         var tasks = this.state.tasks.tasks;
         var tasksSchema = this.state.tasks.schema;
         var taskGridSettings = this.state.clientSettings.taskGridSettings;
