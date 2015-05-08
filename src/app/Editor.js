@@ -18,7 +18,7 @@ var Editor = React.createClass({
         return (
             <div className="full-width task-editor">
                 <span className="section" >
-                    <div>section 1</div>
+                    <div>About Me</div>
                     <div>
                         <span className="field name">Name:</span>
                         <span className="field value"><input type="text" defaultValue={task.Title} onChange={this.edit("Title")}/></span>
@@ -29,7 +29,7 @@ var Editor = React.createClass({
                     </div>
                 </span>
                 <span className="section" >
-                    <div> section 2</div>
+                    <div>Date Planning</div>
                     <div>
                         <span className="field name">Planned Start:</span>
                         <span className="field value"><input type="date" defaultValue={moment(task.PlannedStart).format('YYYY-MM-DD')} onChange={this.edit("PlannedStart")}/></span>
@@ -55,7 +55,8 @@ var Editor = React.createClass({
                         </span>
                     </div>
                 </span>
-                <span className="section" ><div> section 3</div>
+                <span className="section" >
+                <div>Date Actuals</div>
                 <div>
                     <span className="field name">Actual Start:</span>
                     <span className="field value"><input type="date" defaultValue={moment(task.ActualStart).format('YYYY-MM-DD')} disabled="disabled" /></span>
