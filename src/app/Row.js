@@ -1,4 +1,5 @@
 var React = require('react');
+var Editor = require('./Editor')
 require('react/addons');
 
 var Row = React.createClass({
@@ -15,14 +16,25 @@ var Row = React.createClass({
       evt.preventDefault();
       this.setState({isEditing: false});
     },
+    expandEdit() {
+        if (!this.state.editing) {
+            this.setState({ editing: true });
+        }
+    },
+    collapseEdit() {
+        if (this.state.editing) {
+            this.setState({ editing: false });
+        }
+    },
     render() {
         var schema = this.props.schema;
         var task = this.props.task;
         var classes = React.addons.classSet({
             'editing': this.state.isEditing
         });
+        var editing = this.state.editing;
         return (
-            <div className={"row " + classes}>
+            <div className={"row " + classes} onClick={this.expandEdit}>
               <div className="col edit">
                 <div className="preEdit">
                   <a href="#" onClick={this.startEdit}>
@@ -34,8 +46,8 @@ var Row = React.createClass({
                 </div>
               </div>
             {
-              schema.map(function(taskField){
-                return (
+              editing ? (<Editor task={task} schema={schema} doneCB={this.collapseEdit} />) : schema.map(function(taskField){
+                 return (
                   <div className="col">
                     <span className="view">
                       {task[taskField.Name]}
