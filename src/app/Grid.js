@@ -9,7 +9,6 @@ var _ = require('lodash');
 
 var Grid = React.createClass({
     mixins: [Reflux.connect(TasksStore), Reflux.connect(ClientSettingsStore)],
-
     getInitialState(){
       return {
         startRow: 0,

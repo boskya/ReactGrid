@@ -8,8 +8,6 @@ var moment = require('moment');
 var TasksStore = Reflux.createStore({
 
     getInitialState() {
-
-        var t0 = performance.now();
         var schedule = createRandomSchedule(2000);
         var tasks = { schema: tasksSchema };
 
@@ -20,9 +18,7 @@ var TasksStore = Reflux.createStore({
             if(t.ActualFinish) { t.ActualFinish = moment(t.ActualFinish).format('YYYY-MM-DD'); }
             return t;
         });
-        var t1 = performance.now();
-        console.log("Call to random schedule " + (t1 - t0) + " milliseconds");
-        
+
         return {tasks};
     }
 });
