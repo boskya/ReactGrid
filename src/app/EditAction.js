@@ -18,14 +18,14 @@ var Editor = React.createClass({
         ? (
             <div className="col edit">
                     <a href="#" onClick={this.collapseEdit}>
-                        <span className="fa fa-floppy-o" ></span>
+                        <span className="fa fa-caret-square-o-down" ></span>
                     </a>
             </div>
         )
         :(
             <div className="col edit">
                 <a href="#" onClick={this.expandEdit}>
-                    <span className="fa fa-pencil" ></span>
+                    <span className="fa fa-caret-square-o-right" ></span>
                 </a>
             </div>
         );
