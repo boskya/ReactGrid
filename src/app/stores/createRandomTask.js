@@ -68,8 +68,8 @@ function createRandomTask() {
     var actualFinish = moment(finishDate).add(getRandomInt(0, 7), 'd');
     var duration = moment.duration(finishDate - startDate);
     return {
-        ActualStart: actualStart,
-        ActualFinish: actualFinish,
+        ActualStart: moment(actualStart).format('YYYY-MM-DD'),
+        ActualFinish: moment(actualFinish).format('YYYY-MM-DD'),
         ActualWorkMinutes: getRandomInt(),
         Description: faker.lorem.sentence(),
         Assignments: getRandomAssignments(getRandomInt(1, 4)),
@@ -81,8 +81,8 @@ function createRandomTask() {
         OnHold: getRandomYesNo(),
         OutlineNumber: getRandomOutlineNumber(10, 100),
         PercentComplete: getRandomInt(0, 101) + '%',
-        PlannedStart: startDate,
-        PlannedFinish: finishDate,
+        PlannedStart: moment(startDate).format('YYYY-MM-DD'),
+        PlannedFinish: moment(finishDate).format('YYYY-MM-DD'),
         PlannedWorkMinutes: duration.add(getRandomInt(0, 60000), 'm').humanize(),
         Priority: getRandomTaskPriority(),
         Status: getRandomTaskStatus(),
