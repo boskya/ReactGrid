@@ -45,9 +45,6 @@ var Grid = React.createClass({
 
         return (
           <div id="grid">
-            <div className="addRowHeader">
-              <a href="#"><span className="add-icon"></span>Add</a>
-            </div>
             <ul className="gridContainer">
                 <li className="rowHeader">
                   <div className="col edit"></div>
