@@ -1,7 +1,21 @@
+@import "font-awesome/less/font-awesome.less";
 body{
-  margin:0 auto;
+  margin-top: 20px;
   padding:0;
   overflow:scroll;
+}
+
+.add-icon {
+  .fa-icon();
+  &:before {
+    content: @fa-var-plus;
+  }
+}
+
+.addRowHeader{
+  padding:8px;
+  a {
+  }
 }
 
 .gridContainer {
@@ -26,8 +40,48 @@ body{
     border: 1px solid #999;
     box-sizing: border-box;
     display:table-cell;
+
+    &.edit {
+      >div {
+        border:none;
+      }
+      .postEdit {
+        display:none;
+        border:none;
+      }
+      .preEdit {
+        display:block;
+      }
+    }
+
+    .editor {
+      display:none;
+    }
+    .view {
+      display:block;
+    }
   }
 
+  .row.editing{
+    .col {
+      &.edit {
+        .postEdit {
+          display:block;
+        }
+        .preEdit {
+          display:none;
+        }
+      }
+
+      .editor {
+        display:block;
+      }
+      .view {
+        display:none;
+      }
+    }
+
+  }
 }
 
 table {

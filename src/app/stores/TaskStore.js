@@ -4,127 +4,159 @@ var React = require('react');
 var tasksSchema = [
     {
         "Name": "ActualFinish",
-        "DisplayName": "Actual Finish"
+        "DisplayName": "Actual Finish",
+        "DataType": "date"
     },
     {
         "Name": "ActualStart",
-        "DisplayName": "Actual Start"
+        "DisplayName": "Actual Start",
+        "DataType": "date"
     },
     {
         "Name": "ActualWorkMinutes",
-        "DisplayName": "Actual Work"
+        "DisplayName": "Actual Work",
+        "DataType": "string"
     },
     {
         "Name": "Assignments",
-        "DisplayName": "Assignments"
+        "DisplayName": "Assignments",
+        "DataType": "string"
     },
     {
         "Name": "CrossProjectPredecessors",
-        "DisplayName": "Cross Project Predecessors"
+        "DisplayName": "Cross Project Predecessors",
+        "DataType": "string"
+
     },
     {
         "Name": "Description",
-        "DisplayName": "Description"
+        "DisplayName": "Description",
+        "DataType": "string"
     },
     {
         "Name": "DurationMinutes",
-        "DisplayName": "Duration"
+        "DisplayName": "Duration",
+        "DataType": "string"
     },
     {
         "Name": "EtcMinutes",
-        "DisplayName": "Etc"
+        "DisplayName": "Etc",
+        "DataType": "string"
     },
     {
         "Name": "Id",
-        "DisplayName": "Id"
+        "DisplayName": "Id",
+        "DataType": "string"
     },
     {
         "Name": "Indent",
-        "DisplayName": "Indent"
+        "DisplayName": "Indent",
+        "DataType": "string"
     },
     {
         "Name": "IsBillable",
-        "DisplayName": "Billable"
+        "DisplayName": "Billable",
+        "DataType": "bool"
     },
     {
         "Name": "IsDeliverable",
-        "DisplayName": "Deliverable"
+        "DisplayName": "Deliverable",
+        "DataType": "bool"
     },
     {
         "Name": "IsMilestone",
-        "DisplayName": "Milestone"
+        "DisplayName": "Milestone",
+        "DataType": "bool"
     },
     {
         "Name": "IsOnCriticalPath",
-        "DisplayName": "Critical Path"
+        "DisplayName": "Critical Path",
+        "DataType": "bool"
     },
     {
         "Name": "IsParent",
-        "DisplayName": "Parent"
+        "DisplayName": "Parent",
+        "DataType": "bool"
     },
     {
         "Name": "Number",
-        "DisplayName": "Number"
+        "DisplayName": "Number",
+        "DataType": "number"
     },
     {
         "Name": "OnHold",
-        "DisplayName": "OnHold"
+        "DisplayName": "OnHold",
+        "DataType": "bool"
     },
     {
         "Name": "OutlineNumber",
-        "DisplayName": "WBS"
+        "DisplayName": "WBS",
+        "DataType": "bool"
     },
     {
         "Name": "ParentTaskId",
-        "DisplayName": "ParentTaskId"
+        "DisplayName": "ParentTaskId",
+        "DataType": "string"
     },
     {
         "Name": "PercentComplete",
-        "DisplayName": "% Complete"
+        "DisplayName": "% Complete",
+        "DataType": "string"
     },
     {
         "Name": "PlannedFinish",
-        "DisplayName": "Planned Finish"
+        "DisplayName": "Planned Finish",
+        "DataType": "date"
     },
     {
         "Name": "PlannedStart",
-        "DisplayName": "Planned Start"
+        "DisplayName": "Planned Start",
+        "DataType": "date"
     },
     {
         "Name": "PlannedWorkMinutes",
-        "DisplayName": "Planned Work"
+        "DisplayName": "Planned Work",
+        "DataType": "string"
     },
     {
         "Name": "Priority",
-        "DisplayName": "Priority"
+        "DisplayName": "Priority",
+        "DataType": "string"
     },
     {
         "Name": "RelatedItems",
-        "DisplayName": "Related Items"
+        "DisplayName": "Related Items",
+        "DataType": "string"
     },
     {
         "Name": "SiblingIndex",
-        "DisplayName": "Sibling Index"
+        "DisplayName": "Sibling Index",
+        "DataType": "string"
     },
     {
         "Name": "Status",
-        "DisplayName": "Status"
+        "DisplayName": "Status",
+        "DataType": "string"
     },
     {
         "Name": "TaskPredecessorRefs",
-        "DisplayName": "Predeessors"
+        "DisplayName": "Predeessors",
+        "DataType": "string"
     },
     {
         "Name": "TaskType",
-        "DisplayName": "Type"
+        "DisplayName": "Type",
+        "DataType": "string"
     },
     {
         "Name": "Title",
-        "DisplayName": "Name"
+        "DisplayName": "Name",
+        "DataType": "string"
     },
     {
         "Name": "WorkCalendarID",
-        "DisplayName": "Work Calendar Id"
+        "DisplayName": "Work Calendar Id",
+        "DataType": "string"
     },
 ];
 

@@ -21,7 +21,8 @@
     "jsx": "src/app/**/*.jsx",
     "app": "src/app/app.js",
     "main": "src/app/main.js",
-    "html": "src/*.html"
+    "html": "src/*.html",
+    "fonts": "src/styles/font-awesome/fonts"
   },
   "dest": {
     "style": "style.css",
