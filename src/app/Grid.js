@@ -46,7 +46,7 @@ var Grid = React.createClass({
         return (
           <div id="grid">
             <div className="addRowHeader">
-              <a href="#"><span className="add-icon"></span>Add</a>
+              <span className="fa fa-exclamation"></span><span className="fa fa-exclamation"></span> Super Awesome High Performance Grid <span className="fa fa-exclamation"></span><span className="fa fa-exclamation"></span>
             </div>
             <ul className="gridContainer">
                 <li className="rowHeader">
