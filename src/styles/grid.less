@@ -1,8 +1,9 @@
 @import "font-awesome/less/font-awesome.less";
-body{
+
+body {
   margin-top: 20px;
-  padding:0;
-  overflow:scroll;
+  padding: 0;
+  overflow: hidden;
 
   .add-icon {
     .fa-icon();
@@ -11,18 +12,18 @@ body{
     }
   }
 
-  .addRowHeader{
-    padding:8px;
+  .addRowHeader {
+    padding: 8px;
     a {
     }
   }
 
   .gridContainer {
-    margin:0 auto;
+    margin: 0 auto;
     padding: 1px;
     border: 1px solid gray;
     overflow: scroll;
-
+    height: 90vh;
 
     .rowHeader {
       font-weight: bold;
@@ -58,7 +59,7 @@ body{
     }
 
     .col {
-      width:140px;
+      width: 140px;
       border: 1px solid #999;
       box-sizing: border-box;
       display: inline-block;
@@ -68,33 +69,33 @@ body{
       }
 
       &.edit {
-        >div {
-          border:none;
+        > div {
+          border: none;
         }
         .postEdit {
-          display:none;
-          border:none;
+          display: none;
+          border: none;
         }
         .preEdit {
-          display:block;
+          display: block;
         }
       }
 
       .editor {
-        display:none;
+        display: none;
       }
       .view {
-        display:block;
+        display: block;
       }
     }
 
-    .col.editing{
-        .editor {
-          display:block;
-        }
-        .view {
-          display:none;
-        }
+    .col.editing {
+      .editor {
+        display: block;
       }
+      .view {
+        display: none;
+      }
+    }
   }
 }
