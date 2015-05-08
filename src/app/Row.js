@@ -78,7 +78,7 @@ var Row = React.createClass({
                     </div>
                   </div>
                 ) : (
-                  <div className="col" onClick={startInlineEditHandler}>
+                  <div className="col" title={task[taskField.Name]} onDoubleClick={startInlineEditHandler}>
                     <span className="view">
                       {task[taskField.Name]}
                     </span>
