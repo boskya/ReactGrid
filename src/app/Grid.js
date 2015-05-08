@@ -18,8 +18,13 @@ var Grid = React.createClass({
             return _.find(tasksSchema, { 'Name': taskFieldSetting.Name })
         });
         return (
-            <div id="grid" className="gridContainer">
+          <div id="grid">
+            <div className="addRowHeader">
+              <a href="#"><span className="add-icon"></span>Add</a>
+            </div>
+            <div className="gridContainer">
                 <div className="rowHeader">
+                  <div className="col edit"></div>
                 {
                   displaySchema.map(function(taskField){
                     return (
@@ -34,6 +39,7 @@ var Grid = React.createClass({
                     })
                 }
             </div>
+          </div>
         );
     }
 });

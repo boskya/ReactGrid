@@ -5,7 +5,7 @@ var tasks = require('./tasksData');
 var moment = require('moment');
 
 var TasksStore = Reflux.createStore({
-    
+
     getInitialState() {
         tasks.tasks = tasks.tasks.map(function (t) {
             if(t.PlannedFinish) { t.PlannedFinish = moment(t.PlannedFinish).format('YYYY-MM-DD'); }
