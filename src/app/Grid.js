@@ -9,14 +9,39 @@ var _ = require('lodash');
 
 var Grid = React.createClass({
     mixins: [Reflux.connect(TasksStore), Reflux.connect(ClientSettingsStore)],
-    render() {
-        var tasks = this.state.tasks.tasks;
+    getInitialState(){
+      return {
+        startRow: 0,
+        endRow:100
+      }
+    },
+
+    handleScroll(e) {
+        var elem = e.target;
+        var scrollPosition = elem.scrollTop + elem.clientHeight;
+        if (scrollPosition + 50 > elem.scrollHeight) {
+            var nRowsAdded = Math.min(this.state.tasks.tasks.length, this.state.endRow + 100) - this.state.endRow;
+            this.setState({endRow: this.state.endRow + nRowsAdded});
+        }
+    },
+
+    componentDidMount(){
+        var grid = React.findDOMNode(this);
+        var gridContainer = grid.querySelector('.gridContainer');
+
+        gridContainer.onscroll = this.handleScroll;
+    },
+
+    render(){
+        var tasks = _.slice(this.state.tasks.tasks, this.state.startRow, this.state.endRow);
         var tasksSchema = this.state.tasks.schema;
         var taskGridSettings = this.state.clientSettings.taskGridSettings;
         var taskGridSettingsSorted = _.sortBy(taskGridSettings, "Order");
+
         var displaySchema = taskGridSettingsSorted.map(function(taskFieldSetting){
             return _.find(tasksSchema, { 'Name': taskFieldSetting.Name })
         });
+
         return (
           <div id="grid">
             <div className="addRowHeader">
@@ -34,8 +59,8 @@ var Grid = React.createClass({
                 }
                 </li>
                 {
-                    this.state.tasks.tasks.map(function (task) {
-                        return <Row schema={displaySchema} task={task}/>;
+                    tasks.map(function (task, index) {
+                        return <Row schema={displaySchema} task={task} index={index} />;
                     })
                 }
             </ul>

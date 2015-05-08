@@ -8,8 +8,7 @@ var moment = require('moment');
 var TasksStore = Reflux.createStore({
 
     getInitialState() {
-        var schedule = createRandomSchedule(200);
-
+        var schedule = createRandomSchedule(2000);
         var tasks = { schema: tasksSchema };
 
         tasks.tasks = schedule.map(function (t) {
