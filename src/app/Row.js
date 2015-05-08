@@ -58,8 +58,12 @@ var Row = React.createClass({
         var startInlineEditHandler = this.startInlineEdit;
         var checkEnter = this.checkEnter;
         var dataChange = this.dataChange;
+        var rowClass = "row";
+        if (editing) {
+            rowClass += " expanded-edit";
+        }
         return (
-            <div className="row">
+            <div className={rowClass}>
               <EditAction expandEditFn={this.expandEdit} collapseEditFn={this.collapseEdit}/>
             {
               editing ? (<Editor task={task} schema={schema} editFN={this.editField} doneCB={this.collapseEdit} />) : schema.map(function(taskField){
