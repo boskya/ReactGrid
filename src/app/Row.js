@@ -5,66 +5,65 @@ require('react/addons');
 var Row = React.createClass({
     getInitialState(){
       return {
-        isEditing : false,
-            editing: false,
-            task: this.props.task
+        isInlineEditing : false,
+        editing: false
       };
     },
-    startEdit(evt) {
+    startInlineEdit(evt) {
         evt.preventDefault();
-        this.setState({isEditing: true});
+        this.setState({isInlineEditing: true});
     },
-    stopEdit(evt){
+    stopInlineEdit(evt){
       evt.preventDefault();
-      this.setState({isEditing: false});
+      this.setState({isInlineEditing: false});
     },
-    expandEdit() {
+    expandEdit(evt) {
         if (!this.state.editing) {
-            this.setState({ editing: true });
+          evt.stopPropagation();
+          this.setState({ editing: true });
         }
     },
-    collapseEdit() {
+    collapseEdit(evt) {
         if (this.state.editing) {
+            evt.stopPropagation();
             this.setState({ editing: false });
         }
     },
-    edit(field, val) {
-        this.state.task[field] = val;
-    },
     render() {
         var schema = this.props.schema;
-        var task = this.state.task;
+        var task = this.props.task;
         var classes = React.addons.classSet({
-            'editing': this.state.isEditing
+            'editing': this.state.isInlineEditing
         });
         var editing = this.state.editing;
+        var startInlineEditHandler = this.startInlineEdit;
         return (
-            <li className={"row " + classes} onClick={this.expandEdit}>
+            <div className="row">
               <div className="col edit">
                 <div className="preEdit">
-                  <a href="#" onClick={this.startEdit}>
+                  <a href="#" onClick={this.expandEdit}>
                     <span className="fa fa-pencil" ></span>
                   </a>
                 </div>
                 <div className="postEdit">
-                  <a href="#" onClick={this.stopEdit}> Cancel </a>
+                  <a href="#" onClick={this.stopInlineEdit}> Cancel </a>
                 </div>
               </div>
             {
-              editing ? (<Editor task={task} schema={schema} editFN={this.edit} doneCB={this.collapseEdit} />) : schema.map(function(taskField){
+              editing ? (<Editor task={task} schema={schema} doneCB={this.collapseEdit} />) : schema.map(function(taskField){
                  return (
-                  <div className="col">
+                  <div className={"col " + classes} onClick={startInlineEditHandler}>
                     <span className="view">
                       {task[taskField.Name]}
                     </span>
                     <div className="editor">
-                      EDIT ME!!
+                      <input type="text" value="EDIT ME"></input>
                     </div>
                   </div>
                 );
               })
             }
-            </li>
+            </div>
         );
     }
 });
