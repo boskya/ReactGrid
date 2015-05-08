@@ -22,7 +22,8 @@
     "app": "src/app/app.js",
     "main": "src/app/main.js",
     "html": "src/*.html",
-    "fonts": "src/styles/font-awesome/fonts"
+    "fonts": "src/styles/font-awesome/fonts",
+    "images": "src/images/*.jpg"
   },
   "dest": {
     "style": "style.css",

@@ -27,7 +27,7 @@ gulp.task('bower', function() {
 /**
  * Running livereload server
  */
-.task('server',['copyhtml','fonts','less','js'], function() {
+.task('server',['copyhtml','copyimg','fonts','less','js'], function() {
   browserSync({
     server: {
      baseDir: './dist'
@@ -37,6 +37,11 @@ gulp.task('bower', function() {
 
 .task('copyhtml', ['clean'], function(){
   return gulp.src(package.paths.html)
+  .pipe(gulp.dest(package.dest.dist));
+})
+
+.task('copyimg', ['clean'], function(){
+  return gulp.src(package.paths.images)
   .pipe(gulp.dest(package.dest.dist));
 })
 
@@ -70,6 +75,6 @@ gulp.task('bower', function() {
 .task('serve', ['bower', 'server'], function() {
   return gulp.watch([
     package.paths.js, package.paths.jsx, package.paths.html, package.paths.less
-  ], ['copyhtml','less', 'js', browserSync.reload
+  ], ['copyhtml','less','copyimg','fonts','js', browserSync.reload
   ]);
 })
