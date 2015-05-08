@@ -1,5 +1,12 @@
 var Reflux = require('reflux');
 var React = require('react');
+var _ = require('lodash');
+var TasksStore = Reflux.createStore({
+    getInitialState() {
+        
+        return {tasks};
+    }
+});
 
 var tasksSchema = [
     {
@@ -4395,10 +4402,6 @@ var tasks = {
 };
 
 
-var TasksStore = Reflux.createStore({
-  getInitialState() {
-        return {tasks};
-    }
-});
+
 
 module.exports = TasksStore;
