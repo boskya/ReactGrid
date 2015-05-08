@@ -39,7 +39,6 @@ function getRandomTaskPriority() {
 }
 
 function getRandomAssignments(numAssignees) {
-    debugger;
     numAssignees = Math.max(1, numAssignees);
 
     var assigneeNames = '';
