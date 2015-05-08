@@ -39,7 +39,7 @@ var Row = React.createClass({
         });
         var editing = this.state.editing;
         return (
-            <div className={"row " + classes} onClick={this.expandEdit}>
+            <li className={"row " + classes} onClick={this.expandEdit}>
               <div className="col edit">
                 <div className="preEdit">
                   <a href="#" onClick={this.startEdit}>
@@ -64,7 +64,7 @@ var Row = React.createClass({
                 );
               })
             }
-            </div>
+            </li>
         );
     }
 });

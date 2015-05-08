@@ -22,8 +22,8 @@ var Grid = React.createClass({
             <div className="addRowHeader">
               <a href="#"><span className="add-icon"></span>Add</a>
             </div>
-            <div className="gridContainer">
-                <div className="rowHeader">
+            <ul className="gridContainer">
+                <li className="rowHeader">
                   <div className="col edit"></div>
                 {
                   displaySchema.map(function(taskField){
@@ -32,13 +32,13 @@ var Grid = React.createClass({
                     );
                   })
                 }
-                </div>
+                </li>
                 {
                     this.state.tasks.tasks.map(function (task) {
                         return <Row schema={displaySchema} task={task}/>;
                     })
                 }
-            </div>
+            </ul>
           </div>
         );
     }

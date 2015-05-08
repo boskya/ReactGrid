@@ -19,9 +19,10 @@ body{
 
   .gridContainer {
     margin:0 auto;
+    padding: 1px;
     border: 1px solid gray;
     overflow: scroll;
-    display:table;
+    
 
     .rowHeader {
       font-weight: bold;
@@ -38,9 +39,9 @@ body{
     }
 
     .row, .rowHeader {
+      display: table-row;
       box-sizing: border-box;
       white-space: nowrap;
-      display:table-row;
 
       & > div {
         border: 1px solid #999;
@@ -51,7 +52,7 @@ body{
         min-width: 25px;
 
         &.task-editor {
-          height: 500px;
+          height: 300px;
         }
       }
     }
