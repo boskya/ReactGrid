@@ -57,6 +57,41 @@ body {
 
         &.task-editor {
           height: 300px;
+          & > span.section {
+              width: 32vw;
+              float: left;
+              height: 98%;
+              border-radius: 10px;
+              border: 1px solid rgb(144, 142, 131);
+              margin: 2px;
+              background: beige;
+              input {
+                  width: 100%;
+              }
+              & > div {
+                  margin-right: 15px;
+                  &:first-child {
+                      text-align: center;
+                  }
+                  .field.name {
+                      width: 28%;
+                      display: inline-block;
+                      text-align: left;
+                      padding: 10px;
+                      vertical-align: top;
+                  }
+                  .field.value {
+                      padding-top: 10px;
+                      vertical-align: middle;
+                      display: inline-block;
+                      width: 50%;
+                      & > textarea {
+                          width: 191px;
+                          height: 137px;
+                      }
+                  }
+              }
+          }
         }
       }
     }

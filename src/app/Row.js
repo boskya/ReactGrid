@@ -1,4 +1,5 @@
 var React = require('react');
+var EditAction = require('./EditAction');
 var Editor = require('./Editor')
 require('react/addons');
 
@@ -59,16 +60,7 @@ var Row = React.createClass({
         var dataChange = this.dataChange;
         return (
             <div className="row">
-              <div className="col edit">
-                <div className="preEdit">
-                  <a href="#" onClick={this.expandEdit}>
-                    <span className="fa fa-pencil" ></span>
-                  </a>
-                </div>
-                <div className="postEdit">
-                  <a href="#" onClick={this.stopInlineEdit}> Cancel </a>
-                </div>
-              </div>
+              <EditAction expandEditFn={this.expandEdit} collapseEditFn={this.collapseEdit}/>
             {
               editing ? (<Editor task={task} schema={schema} editFN={this.editField} doneCB={this.collapseEdit} />) : schema.map(function(taskField){
                  return inlineEdit ? (
